@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  percepatan-studi:
+    build: .
+    container_name: percepatan-studi
+    volumes:
+      - data-1:/usr/share/nginx/html
+    ports:
+      - "9000:80"
+    restart: always
+
+  percepatan-studi2:
+    image: redis:latest
+    container_name: percepatan-studi2
+    volumes:
+      - data-1:/data
+    restart: always
+
+volumes:
+  data-1:
